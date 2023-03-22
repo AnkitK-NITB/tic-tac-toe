@@ -57,7 +57,7 @@ export default function Board() {
       })
       }
     </div>
-    <div className='buttons'>
+    <div >
       <button onClick={()=>undo()}>Step Back</button>
       <button onClick={()=>reset()}>RESET</button>
     </div>
