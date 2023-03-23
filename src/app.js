@@ -37,8 +37,11 @@ export default function Board() {
 
   const winner = calculateWinner(squares);
   let status;
+  console.log(moves.length)
   if (winner) {
     status = 'Winner: ' + winner;
+  } else if(moves.length===9){
+    status = "Draw";
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
