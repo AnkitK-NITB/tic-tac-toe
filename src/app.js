@@ -32,12 +32,10 @@ export default function Board() {
     const nextSquares = squares.slice();
     nextSquares[i] = xIsNext?'X':'O';
     setSquares(nextSquares);
-    // console.log(moves, moves[moves.length-1])
   }
 
   const winner = calculateWinner(squares);
   let status;
-  console.log(moves.length)
   if (winner) {
     status = 'Winner: ' + winner;
   } else if(moves.length===9){
