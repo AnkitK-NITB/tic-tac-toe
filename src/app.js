@@ -12,6 +12,7 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [moves, setMoves] = useState(Array);
   let xIsNext = (moves.length%2===0);
+  let buttonContainer = moves.length>0;
   function undo(){
     if(moves.length===0)return;
     let cur = moves.pop()
@@ -46,21 +47,24 @@ export default function Board() {
   const rowCount = 3, colCount = 3
   return (
     <>
-    <div className="status">{status}</div>
-    <div>
-      {[...new Array(rowCount)].map((x, rowIndex) => {
-        return (
-          <div className="board-row" key={rowIndex}>
-            {[...new Array(colCount)].map((y, colIndex) => <Square key={rowIndex*colCount + colIndex} value={squares[rowIndex*colCount + colIndex]} onSquareClick={() => handleClick(rowIndex*colCount + colIndex)} /> )}
-            
-          </div>
-        )
-      })
+    <div className='container'>
+      <div className="status">{status}</div>
+      <div className='board'>
+        {[...new Array(rowCount)].map((x, rowIndex) => {
+          return (
+            <div className="board-row" key={rowIndex}>
+              {[...new Array(colCount)].map((y, colIndex) => <Square key={rowIndex*colCount + colIndex} value={squares[rowIndex*colCount + colIndex]} onSquareClick={() => handleClick(rowIndex*colCount + colIndex)} /> )}
+              
+            </div>
+          )
+        })
+        }
+      </div>
+      { buttonContainer && (<div className='button-container'>
+        <button className='button1' onClick={()=>undo()}>Step Back</button>
+        <button className='button1' onClick={()=>reset()}>RESET</button>
+      </div>)
       }
-    </div>
-    <div >
-      <button onClick={()=>undo()}>Step Back</button>
-      <button onClick={()=>reset()}>RESET</button>
     </div>
     </>
   );

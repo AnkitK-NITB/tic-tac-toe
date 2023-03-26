@@ -1,9 +1,10 @@
 * {
   box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   margin: 20px;
   padding: 0;
 }
@@ -63,12 +64,12 @@ body {
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 62px;
+  width: 62px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
 }
 
 .board-row:after {
@@ -76,16 +77,41 @@ body {
   content: '';
   display: table;
 }
-
+.container {
+  max-width: 600px;
+  width:fit-content;
+  margin: 0 auto;
+  /* border: 2px solid #dcc3c3; */
+  border-radius: 25px;
+  padding: 30px;
+  justify-content: center;
+}
+.board {
+  display:grid;
+  justify-content: center;
+}
 .status {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  
+  font-size: larger;
 }
 .game {
   display: flex;
   flex-direction: row;
+  text-align: center;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
 }
 
-.game-info {
-  margin-left: 20px;
+.button1 {
+  padding: 10px 15px;
+  margin: 15px 5px;
+  /* border-radius: 12px; */
+  font-size: 1rem;
+  background: #fff;
+  border: 1px solid #999;
 }
 
