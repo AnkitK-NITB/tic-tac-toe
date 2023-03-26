@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Build
       run: npm install
@@ -20,7 +20,7 @@ jobs:
 
     - name: Deploy
       run: |
-        git config --global user.name 'Anton Putra'
-        git config --global user.email 'me@antonputra.com'
+        git config --global user.name 'Ankit Kushwaha'
+        git config --global user.email 'ankitkshwh003@gmail.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}    
         npm run deploy
